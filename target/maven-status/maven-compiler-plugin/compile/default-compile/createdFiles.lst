@@ -1,0 +1,7 @@
+api\pixelPulse\pixelPulse\PixelPulseApplication.class
+api\pixelPulse\pixelPulse\entities\Database.class
+api\pixelPulse\pixelPulse\entities\Database$1.class
+api\pixelPulse\pixelPulse\controller\UserController.class
+api\pixelPulse\pixelPulse\Enum\Genres.class
+api\pixelPulse\pixelPulse\DTOS\DTOUser.class
+api\pixelPulse\pixelPulse\DTOS\DTOLogin.class
