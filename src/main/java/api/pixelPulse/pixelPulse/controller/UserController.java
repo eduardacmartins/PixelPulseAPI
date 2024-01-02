@@ -26,9 +26,8 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestBody DTOLogin loginData) throws Exception {
 
-        Database db = new Database();
-
         try{
+            Database db = new Database();
             DTOUser user = db.getUser(loginData.email(), loginData.password());
             return ResponseEntity.status(200).body(user);
 
@@ -41,10 +40,8 @@ public class UserController {
 
     @PostMapping("/signup")
     public ResponseEntity<Object> signup(@RequestBody DTOUser users) {
-
-        Database db = new Database();
-
         try {
+            Database db = new Database();
             db.Register(users);
             return ResponseEntity.status(201).body("Usuario criado.");
 
