@@ -17,6 +17,12 @@ public class UserController {
 
     //HTTP METHOD
 
+
+    @GetMapping("/")
+    public String hello() {
+        return "online!";
+    }
+
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestBody DTOLogin loginData) throws Exception {
 
