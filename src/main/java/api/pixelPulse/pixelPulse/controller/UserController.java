@@ -27,7 +27,7 @@ public class UserController {
     public ResponseEntity<Object> login(@RequestBody DTOLogin loginData) throws Exception {
 
         try{
-//            Database db = new Database();
+            Database db = new Database();
 //            DTOUser user = db.getUser(loginData.email(), loginData.password());
             return ResponseEntity.status(200).body(loginData);
 
