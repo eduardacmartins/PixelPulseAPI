@@ -37,14 +37,13 @@ public class Database {
         return  FirestoreClient.getFirestore(app);
     }
 
-    public boolean Register(DTOUser user) throws Exception{
+    public void Register(DTOUser user) throws Exception{
         String uuid = UUID.randomUUID().toString();
 
         try{
             DocumentReference docRef = this.FirestoreDatabaseConfig().collection("users").document(uuid);
 
             Map<String, String> data = new HashMap<>(){{
-
                 put("email", user.email());
                 put("password", user.password());
                 put("favoriteGenre1", user.favoriteGenre1().toString());
@@ -54,7 +53,6 @@ public class Database {
             }};
 
             ApiFuture<WriteResult> result = docRef.set(data);
-            return true;
 
 
         }catch (Exception e){
@@ -78,13 +76,22 @@ public class Database {
             DocumentSnapshot data = querySnapshot.get().getDocuments().get(0);
 
 
-            DTOUser user = new DTOUser(data.get("userID").toString(),
-                    data.get("email").toString(),
-                    data.get("password").toString(),
-                    data.get("gamesLife").toString(),
-                    Genres.valueOf(data.get("favoriteGenre1").toString()),
-                    Genres.valueOf(data.get("favoriteGenre2").toString())
-            );
+//            DTOUser user = new DTOUser(data.get("userID").toString(),
+//                    data.get("email").toString(),
+//                    data.get("password").toString(),
+//                    data.get("gamesLife").toString(),
+//                    Genres.valueOf(data.get("favoriteGenre1").toString()),
+//                    Genres.valueOf(data.get("favoriteGenre2").toString())
+//            );
+
+            DTOUser user = new DTOUser(
+                    "7861872361923",
+                    "itallo@gmail.com",
+                    "12345678",
+                    "adoadoadoaado",
+                    Genres.RPG,
+                    Genres.FPS
+                    );
 
             return user;
 

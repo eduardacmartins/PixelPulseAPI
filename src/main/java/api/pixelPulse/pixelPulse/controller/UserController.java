@@ -28,7 +28,7 @@ public class UserController {
 
         try{
             Database db = new Database();
-//            DTOUser user = db.getUser(loginData.email(), loginData.password());
+            DTOUser user = db.getUser(loginData.email(), loginData.password());
             return ResponseEntity.status(200).body(loginData);
 
         }catch(Exception e){
